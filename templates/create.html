@@ -24,15 +24,15 @@
         </div>
 
         <div>
-            {{ form.gender.label (class = 'form-control-label') }}
+            {{ form.gender.label (class = 'form-label') }}
             {% for value in form.gender %}
                 <label for="{{ value.iid }}">{{ value.label  }}{{ value }}</label >
             {% endfor %}  
         </div>
 
         <div>
-            <labelfor="{{ form.state.id }}"> {{ form.state.label (class = 'form-control-label') }} </label )>
-            {{ form.state }}
+            {{ form.state.label()  }}
+            {{ form.state  (class = 'form-select ')}}
         </div>
 
     </fieldset>
