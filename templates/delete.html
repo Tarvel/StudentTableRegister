@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<form method=post action="{{ url_for('delete', student_id=students.id)}}">
+    <legend>{{ legend }}</legend>
+    <fieldset>
+        {{ form.hidden_tag() }}
+        <strong> DO YOU REALLY WANT TO DELETE?</strong>
+        <div>
+            <a href='/'><button type="button" class="btn btn-primary" >Cancel</button></a>
+        
+            {{ form.delete (class="btn btn-danger bnt-sm m-1")}}
+        </div>
+    </fieldset>
+</form>
+
+{% endblock content %}

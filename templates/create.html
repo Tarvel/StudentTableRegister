@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form method='POST' action''>
+    
+    <legend>{{ legend }}</legend>
+    <fieldset>
+
+        {{ form.hidden_tag() }}
+
+        <div>
+            {{ form.first_name.label (class = 'form-control-label') }}
+            {{ form.first_name (class = 'form-control form-control-lg') }}
+        </div>
+
+        <div>
+            {{ form.last_name.label (class = 'form-control-label') }}
+            {{ form.last_name (class = 'form-control form-control-lg') }}
+        </div>
+
+        <div>
+            {{ form.email.label (class = 'form-control-label') }}
+            {{ form.email (class = 'form-control form-control-lg') }}
+        </div>
+
+        <div>
+            {{ form.gender.label (class = 'form-control-label') }}
+            {% for value in form.gender %}
+                <label for="{{ value.iid }}">{{ value.label  }}{{ value }}</label >
+            {% endfor %}  
+        </div>
+
+        <div>
+            <labelfor="{{ form.state.id }}"> {{ form.state.label (class = 'form-control-label') }} </label )>
+            {{ form.state }}
+        </div>
+
+    </fieldset>
+    
+    <div class="form-group">
+        {{ form.submit (class="btn btn-outline-info")}}
+    </div>
+
+</form>
+
+{% endblock content %}
